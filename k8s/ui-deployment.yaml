@@ -16,6 +16,8 @@ spec:
     spec:
       containers:
         - name: ui-app
-          image: angu
+          image: 
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
