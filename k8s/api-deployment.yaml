@@ -18,4 +18,4 @@ spec:
         - name: api-app
           image: api
           ports:
-            - containerPort: 80
+            - containerPort: 8080
