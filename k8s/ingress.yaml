@@ -11,13 +11,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: frontend-service
+            name: ui-app-service
             port:
               name: http
       - path: /backend
         pathType: Prefix
         backend:
           service:
-            name: backend-service
+            name: api-app-service
             port:
               name: http
