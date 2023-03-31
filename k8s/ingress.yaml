@@ -3,7 +3,12 @@ kind: Ingress
 metadata:
   name: example-ingress
 spec:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.org/mergeable-ingress-type: minion
   rules:
+  - host: www.example.com
   - http:
       paths:
       - path: /frontend
