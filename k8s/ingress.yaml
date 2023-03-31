@@ -2,9 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: example-ingress
-spec:
   annotations:
     nginx.org/mergeable-ingress-type: minion
+spec:
   rules:
   - http:
       paths:
