@@ -16,7 +16,6 @@ spec:
             name: ui-app-service
             port:
               name: http
-              number: 80
       - path: /backend
         pathType: Prefix
         backend:
@@ -24,4 +23,3 @@ spec:
             name: api-app-service
             port:
               name: http
-              number: 8080
