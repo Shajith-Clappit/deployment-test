@@ -17,7 +17,7 @@ spec:
             name: ui-app-service
             port:
               name: http
-      - path: /
+      - path: /api
         pathType: Prefix
         backend:
           service:
