@@ -10,7 +10,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /board(/|$)(.*)
+      - path: /board
         pathType: Prefix
         backend:
           service:
