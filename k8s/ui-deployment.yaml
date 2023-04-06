@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ui-app
-          image: itisshajith/test:latest
+          image: itisshajith/test:lates
           ports:
             - containerPort: 80
       imagePullSecrets:
