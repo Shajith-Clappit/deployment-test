@@ -30,26 +30,6 @@ spec:
             value: "lECaLUPILOxgGKX8"
           - name: "INFRACOST_APIKEY1"
             value: "ico-aGjgbaGNTQsQDhWsUPUMwNSFv9JetNTm"
-          - name: DBSERVER_FQDN
-            valueFrom:
-              secretKeyRef:
-                name: postgres-admin-credentials
-                key: host
-          - name: DBSERVER_PORT
-            valueFrom:
-              secretKeyRef:
-                name: postgres-admin-credentials
-                key: port
-          - name: DBSERVER_USER
-            valueFrom:
-              secretKeyRef:
-                name: postgres-admin-credentials
-                key: username
-          - name: DBSERVER_PWD
-            valueFrom:
-              secretKeyRef:
-                name: postgres-admin-credentials
-                key: password
           - name: ARGO_URL
             valueFrom:
               secretKeyRef:
@@ -95,13 +75,6 @@ spec:
               secretKeyRef:
                 name: clappit-ifrsp-credentials
                 key: miniosk
-          - name: FQDN
-            valueFrom:
-              configMapKeyRef:
-                name: cluster-instance
-                key: fqdn
-          - name: DB_CONNECTION_STRING
-            value: Host=$(DBSERVER_FQDN);Database=ifrsp;Username=$(DBSERVER_USER);Password=$(DBSERVER_PWD);Include Error Detail=true
           - name: ASPNETCORE_ENVIRONMENT
             value: Production
       imagePullSecrets:
