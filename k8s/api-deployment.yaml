@@ -20,15 +20,15 @@ spec:
           ports:
             - containerPort: 5001
           env:
-          - name: "DB_CONNECTION_STRING"
+          - name: "DB_CONNECTION_STRING1"
             value: "Host=clappitdev.ctezbzxjzmiq.us-east-1.rds.amazonaws.com;Port= 5432;Database=ifrsp_dev;Username= clappitdb;Password= ClappIt22"
-          - name: "ARGO_URL"
+          - name: "ARGO_URL1"
             value: "20.253.136.245"
-          - name: "ARGO_USERNAME"
+          - name: "ARGO_USERNAME1"
             value: "admin"
-          - name: "ARGO_PASSWORD"
+          - name: "ARGO_PASSWORD1"
             value: "lECaLUPILOxgGKX8"
-          - name: "INFRACOST_APIKEY"
+          - name: "INFRACOST_APIKEY1"
             value: "ico-aGjgbaGNTQsQDhWsUPUMwNSFv9JetNTm"
           - name: DBSERVER_FQDN
             valueFrom:
