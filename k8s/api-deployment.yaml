@@ -30,5 +30,79 @@ spec:
             value: "lECaLUPILOxgGKX8"
           - name: "INFRACOST_APIKEY"
             value: "ico-aGjgbaGNTQsQDhWsUPUMwNSFv9JetNTm"
+          - name: DBSERVER_FQDN
+            valueFrom:
+              secretKeyRef:
+                name: postgres-admin-credentials
+                key: host
+          - name: DBSERVER_PORT
+            valueFrom:
+              secretKeyRef:
+                name: postgres-admin-credentials
+                key: port
+          - name: DBSERVER_USER
+            valueFrom:
+              secretKeyRef:
+                name: postgres-admin-credentials
+                key: username
+          - name: DBSERVER_PWD
+            valueFrom:
+              secretKeyRef:
+                name: postgres-admin-credentials
+                key: password
+          - name: ARGO_URL
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: argourl
+          - name: ARGO_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: argousername
+          - name: ARGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: argopassword
+          - name: INFRACOST_APIKEY
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: infracostapi
+          - name: GIT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: gitusername
+          - name: GIT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: gitpassword
+          - name: MINIO_EP
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: minioep
+          - name: MINIO_AK
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: minioak
+          - name: MINIO_SK
+            valueFrom:
+              secretKeyRef:
+                name: clappit-ifrsp-credentials
+                key: miniosk
+          - name: FQDN
+            valueFrom:
+              configMapKeyRef:
+                name: cluster-instance
+                key: fqdn
+          - name: DB_CONNECTION_STRING
+            value: Host=$(DBSERVER_FQDN);Database=ifrsp;Username=$(DBSERVER_USER);Password=$(DBSERVER_PWD);Include Error Detail=true
+          - name: ASPNETCORE_ENVIRONMENT
+            value: Production
       imagePullSecrets:
         - name: regcred
