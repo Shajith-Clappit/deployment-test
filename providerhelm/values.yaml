@@ -2,8 +2,3 @@ s3: true
 eks: true
 ec2: true
 iam: true
-
-creds: |
-  [default]
-  aws_access_key_id = AKIAW52LSKCAQOZ6AKM3
-  aws_secret_access_key = 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
