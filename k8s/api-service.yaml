@@ -1,21 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: testapp-deployment
-  labels:
-    app: testapp
+  name: nginx
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: testapp
+      app: nginx
   template:
     metadata:
       labels:
-        app: testapp
+        app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - image: epflsti/nginx
+        name: nginx
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: app.shz14.clappit.io
+spec:
+  selector:
+    app: nginx
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
