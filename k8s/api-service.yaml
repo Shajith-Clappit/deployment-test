@@ -22,7 +22,7 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: test.shc7.clappit.io
+    external-dns.alpha.kubernetes.io/hostname: sha7.shc7.clappit.io
 spec:
   selector:
     app: nginx
