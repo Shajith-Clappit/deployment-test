@@ -61,7 +61,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "appp.shc7.clappit.io"
+    - host: "a2.shc7.clappit.io"
       http:
         paths:
           - path: /
