@@ -46,8 +46,8 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-      #nodeSelector:
-      #  kubernetes.io/hostname: ip-10-0-1-186.us-east-2.compute.internal
+      nodeSelector:
+        kubernetes.io/hostname: ip-10-0-2-245.us-east-2.compute.internal
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -70,4 +70,4 @@ spec:
               service:
                 name: c2048
                 port:
-                  number: 80
+                  number: 8080
