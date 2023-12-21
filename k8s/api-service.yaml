@@ -8,7 +8,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 80
+    - port: 8080
       targetPort: 80
       protocol: TCP
       name: http
@@ -44,7 +44,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
       nodeSelector:
         kubernetes.io/hostname: ip-10-0-2-245.us-east-2.compute.internal
