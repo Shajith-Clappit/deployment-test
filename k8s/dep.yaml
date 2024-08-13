@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: c2048
+  labels:
+    app.kubernetes.io/name: c2048
+    app.kubernetes.io/instance: c2048
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: c2048
+      app.kubernetes.io/instance: c2048
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: c2048
+        app.kubernetes.io/instance: c2048
+    spec:
+      securityContext: {}
+      containers:
+        - name: c2048
+          securityContext: {}
+          image: "clappit/bitbucket:latest"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
