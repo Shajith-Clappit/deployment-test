@@ -1,5 +1,5 @@
 # Use a lightweight base image
-FROM alpine:latest
+FROM alpine:333
 
 # Set the environment variable for the string
 ENV MESSAGE="Hell     o,!"
